@@ -1,0 +1,33 @@
+%% Coverage matrix — perplexity-web-bridge v1.1.0 (2026-09-25)
+%% Evidence grades: LIVE = live-run proof · SCOPE-OUT = explicitly not attempted
+flowchart TB
+  subgraph A["A · Primitives — 6/6 LIVE on the real page"]
+    direction TB
+    A1["OBSERVE — numbered element table — LIVE"]
+    A2["TYPE_TEXT — fill + post_fill draft sync — LIVE"]
+    A3["CLICK — effect-verified ladder — LIVE"]
+    A4["SUBMIT — synthetic rung fired it — LIVE"]
+    A5["WAIT — free cycles + wall cap — LIVE"]
+    A6["EXTRACT — answer region — LIVE"]
+  end
+  subgraph B["B · Loop guarantees — enforced by tests + receipts"]
+    direction TB
+    B1["Receipts BEFORE effects — fail-closed"]
+    B2["Silent-success fall-through on clicks"]
+    B3["DONE verified — extract + keyword gate"]
+    B4["Pre-gate records + site_checks guards"]
+  end
+  subgraph C["C · Scenarios by evidence grade"]
+    direction TB
+    C1["Ask → streamed answer → extract — LIVE 77 s / 19.1x"]
+    C2["Long research run — 13 cycles — LIVE"]
+    C3["Second site, same engine — GitHub — LIVE mechanical"]
+    C4["Guards — model downgrade + decorative citations — LIVE v1.1"]
+    C5["Model switching in site UI — SCOPE-OUT"]
+    C6["Login / pay / upload flows — SCOPE-OUT"]
+  end
+  A --> B --> C
+  classDef live fill:#e8f7ee,stroke:#1a7f4e,color:#0b3d24
+  classDef out fill:#f3f4f6,stroke:#9ca3af,color:#374151
+  class A1,A2,A3,A4,A5,A6,B1,B2,B3,B4,C1,C2,C3,C4 live
+  class C5,C6 out
